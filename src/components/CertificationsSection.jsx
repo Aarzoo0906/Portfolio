@@ -161,33 +161,45 @@ export default function CertificationsSection() {
   ];
 
   const colorConfig = {
-    purple: { // Rename or repurpose to blue
-      bg: 'from-blue-900/50 to-blue-800/50',
-      border: 'border-blue-500/50',
-      hover: 'hover:border-blue-400 hover:shadow-blue-500/30',
-      iconBg: 'bg-blue-500/30',
-      text: 'text-blue-300'
+    purple: {
+      panel: 'from-violet-50 via-white to-blue-50',
+      border: 'border-violet-200',
+      hover: 'hover:border-violet-400 hover:shadow-violet-200/70',
+      iconBg: 'bg-gradient-to-br from-violet-100 to-violet-200',
+      iconSoft: 'text-violet-700',
+      heading: 'text-violet-700',
+      accent: 'text-violet-600',
+      badge: 'bg-violet-100 text-violet-700 border-violet-200'
     },
     blue: {
-      bg: 'from-cyan-900/50 to-cyan-800/50',
-      border: 'border-cyan-500/50',
-      hover: 'hover:border-cyan-400 hover:shadow-cyan-500/30',
-      iconBg: 'bg-cyan-500/30',
-      text: 'text-cyan-300'
+      panel: 'from-sky-50 via-white to-cyan-50',
+      border: 'border-sky-200',
+      hover: 'hover:border-sky-400 hover:shadow-sky-200/70',
+      iconBg: 'bg-gradient-to-br from-sky-100 to-cyan-100',
+      iconSoft: 'text-sky-700',
+      heading: 'text-sky-700',
+      accent: 'text-sky-600',
+      badge: 'bg-sky-100 text-sky-700 border-sky-200'
     },
-    pink: { // Repurpose to light blue
-      bg: 'from-sky-900/50 to-sky-800/50',
-      border: 'border-sky-500/50',
-      hover: 'hover:border-sky-400 hover:shadow-sky-500/30',
-      iconBg: 'bg-sky-500/30',
-      text: 'text-sky-300'
+    pink: {
+      panel: 'from-pink-50 via-white to-sky-50',
+      border: 'border-pink-200',
+      hover: 'hover:border-pink-400 hover:shadow-pink-200/70',
+      iconBg: 'bg-gradient-to-br from-pink-100 to-sky-100',
+      iconSoft: 'text-pink-700',
+      heading: 'text-pink-700',
+      accent: 'text-pink-600',
+      badge: 'bg-pink-100 text-pink-700 border-pink-200'
     },
-    emerald: { // Keep or adjust to teal for bluish
-      bg: 'from-teal-900/50 to-teal-800/50',
-      border: 'border-teal-500/50',
-      hover: 'hover:border-teal-400 hover:shadow-teal-500/30',
-      iconBg: 'bg-teal-500/30',
-      text: 'text-teal-300'
+    emerald: {
+      panel: 'from-emerald-50 via-white to-teal-50',
+      border: 'border-emerald-200',
+      hover: 'hover:border-emerald-400 hover:shadow-emerald-200/70',
+      iconBg: 'bg-gradient-to-br from-emerald-100 to-teal-100',
+      iconSoft: 'text-emerald-700',
+      heading: 'text-emerald-700',
+      accent: 'text-emerald-600',
+      badge: 'bg-emerald-100 text-emerald-700 border-emerald-200'
     }
   };
 
@@ -228,51 +240,44 @@ export default function CertificationsSection() {
             return (
               <div
                 key={cert.id}
-                className={`bg-gradient-to-r ${colors.bg} border ${colors.border} ${colors.hover} rounded-xl p-6 transition-all duration-300 hover:shadow-2xl group relative overflow-hidden`}
+                className={`bg-gradient-to-r ${colors.panel} border ${colors.border} ${colors.hover} rounded-2xl p-6 transition-all duration-300 hover:shadow-2xl group relative overflow-hidden shadow-sm`}
               >
-                {/* Background Animation */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent group-hover:translate-x-full transition-transform duration-500 -translate-x-full"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-white/60 via-transparent to-transparent opacity-80"></div>
 
                 <div className="relative z-10">
                   <div className="flex items-start gap-6">
-                    {/* Icon */}
-                    <div className={`p-4 ${colors.iconBg} rounded-lg flex-shrink-0 group-hover:scale-110 transition-transform duration-300`}>
-                      <span className="text-3xl">{cert.icon}</span>
+                    <div className={`p-4 ${colors.iconBg} rounded-xl flex-shrink-0 group-hover:scale-110 transition-transform duration-300 shadow-inner`}>
+                      <span className={`text-3xl ${colors.iconSoft}`}>{cert.icon}</span>
                     </div>
 
-                    {/* Content */}
                     <div className="flex-1">
-                      {/* Title and Credential */}
                       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 mb-3">
                         <div>
-                          <h3 className={`text-2xl font-bold ${colors.text} mb-1 group-hover:translate-x-2 transition-transform`}>
+                          <h3 className={`text-2xl font-bold ${colors.heading} mb-1 group-hover:translate-x-1 transition-transform`}>
                             {cert.title}
                           </h3>
                           <p className="text-slate-600 font-semibold">{cert.issuer}</p>
                         </div>
-                        <div className="flex items-center gap-2 text-sm">
-                          <CheckCircle size={18} className="text-green-400" />
-                          <span className="text-green-400 font-bold">{cert.credential}</span>
+                        <div className={`inline-flex items-center gap-2 text-sm font-semibold px-3 py-1.5 rounded-full border ${colors.badge}`}>
+                          <CheckCircle size={16} className={colors.accent} />
+                          <span>{cert.credential || 'Certified'}</span>
                         </div>
                       </div>
 
-                      {/* Description */}
-                      <p className="text-slate-600 mb-4">{cert.description}</p>
+                      <p className="text-slate-700 mb-4 leading-relaxed">{cert.description}</p>
 
-                      {/* Date and Details */}
-                      <div className="flex flex-wrap gap-6 items-center">
+                      <div className="flex flex-wrap gap-5 items-center">
                         <div className="flex items-center gap-2 text-sm text-slate-600">
-                          <Calendar size={16} className="text-blue-400" />
+                          <Calendar size={16} className={colors.accent} />
                           <span>{cert.date}</span>
                         </div>
                         <div className="flex items-center gap-2 text-sm text-slate-600">
-                          <Award size={16} className="text-blue-400" />
+                          <Award size={16} className={colors.accent} />
                           <span>Verified Credential</span>
                         </div>
-                        {/* View Certificate Button */}
                         <button
                           onClick={() => setSelectedCertImage(cert.certImage)}
-                          className={`inline-flex items-center gap-2 px-4 py-1 rounded-lg font-semibold text-sm transition-all duration-300 ${colors.text} border border-current hover:scale-105 hover:shadow-lg cursor-pointer`}
+                          className={`inline-flex items-center gap-2 px-4 py-2 rounded-lg font-semibold text-sm transition-all duration-300 ${colors.badge} border hover:scale-[1.02] hover:shadow-md cursor-pointer`}
                         >
                           <Eye size={14} />
                           View
@@ -280,8 +285,7 @@ export default function CertificationsSection() {
                       </div>
                     </div>
 
-                    {/* Check Mark */}
-                    <div className={`text-6xl font-bold ${colors.text} opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all`}>
+                    <div className={`text-6xl font-bold ${colors.heading} opacity-20 group-hover:opacity-30 group-hover:scale-110 transition-all`}>
                       ✓
                     </div>
                   </div>

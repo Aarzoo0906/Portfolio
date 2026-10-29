@@ -14,14 +14,14 @@ export default function AboutSection() {
     {
       title: 'Who I Am',
       color: 'blue',
-      description: 'I am a passionate and motivated BCA student with a strong interest in web development and modern technologies. I enjoy creating responsive, user-friendly web applications and continuously improving my technical skills through hands-on projects and learning. I believe in writing clean code, understanding core concepts, and applying them to solve real-world problems',
-      subdescription: 'Currently, I am learning and working with technologies like HTML, CSS, JavaScript, React, and basic backend concepts. I am eager to gain industry exposure, collaborate with teams, and contribute to innovative projects. My goal is to grow as a full-stack developer and build impactful digital solutions.'
+      description: 'I am a focused and growth-driven developer who has completed my BCA and is currently pursuing my MCA at Chandigarh University. I enjoy building digital solutions that are practical, visually engaging, and user-centered. My work reflects a blend of technical skill, creativity, and a strong interest in learning technologies that solve real-world problems.',
+      subdescription: 'Right now, I am working as a Full Stack Developer Intern while continuously expanding my knowledge in modern web development, AI-powered tools, and software engineering practices. I am passionate about writing clean code, improving my craft, and growing through hands-on experience and continuous learning.'
     },
     {
       title: 'My Journey',
       color: 'cyan',
-      description: 'My journey into the world of technology began with curiosity about how websites and applications work behind the scenes. As a BCA student, I started learning programming fundamentals and gradually developed a strong interest in web development. Through academic learning, self-study, and practical projects, I have been building a solid foundation in both front-end and core computer concepts.',
-      subdescription: 'Along the way, I have worked on small projects, explored modern tools, and continuously challenged myself to learn new technologies. Even with limited resources at times, I stayed consistent and focused on improving my skills. This journey has helped me grow not only as a developer but also as a problem-solver, preparing me for real-world challenges and future opportunities.'
+      description: 'My journey began with curiosity about how websites and applications are built, and it gradually evolved into a deeper interest in technology, design, and problem-solving. After completing my BCA, I chose to level up my skills by pursuing MCA at Chandigarh University while staying active in practical learning and real-world project exposure.',
+      subdescription: 'Along the way, I have strengthened my foundation in full-stack development, explored modern tools, and embraced AI as a way to work smarter and build better solutions. This path has shaped me into a developer who is not only technically inclined but also committed to constant growth, adaptability, and building work that makes an impact.'
     }
   ];
 

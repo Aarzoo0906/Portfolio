@@ -3,7 +3,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Github, Linkedin, Mail, ArrowRight } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
-import profileImage from '../assets/Profile.jpeg';
+import profileImage from '../assets/profile.png';
 
 export default function HeroSection() {
   const { isDark } = useTheme();
@@ -90,9 +90,9 @@ export default function HeroSection() {
               <span className={`font-semibold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent ${
                 isDark ? 'from-blue-300 to-cyan-300' : ''
               }`}>
-                Web Developer
+                Developer Intern
               </span>{' '}
-              & Designer
+              | MCA Student at Chandigarh University
             </p>
           </div>
         </div>
@@ -105,10 +105,10 @@ export default function HeroSection() {
         }`}>
           <div className="animate-marquee whitespace-nowrap ">
             <span className={`font-semibold text-lg mr-8 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
-              ✨ Building elegant digital solutions ✨ Full Stack Development ✨ UI/UX Design ✨ Always Learning ✨
+              ✨ Full Stack Developer Intern ✨ MCA Student at Chandigarh University ✨ AI Learning ✨ Modern Web Technologies ✨
             </span>
             <span className={`font-semibold text-lg mr-8 ${isDark ? 'text-blue-400' : 'text-blue-600'}`}>
-              ✨ Building elegant digital solutions ✨ Full Stack Development ✨ UI/UX Design ✨ Always Learning ✨
+              ✨ Full Stack Developer Intern ✨ MCA Student at Chandigarh University ✨ AI Learning ✨ Modern Web Technologies ✨
             </span>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function HeroSection() {
           <p className={`text-lg mb-10 max-w-3xl mx-auto leading-relaxed transition-colors duration-300 ${
             isDark ? 'text-gray-400' : 'text-gray-600'
           }`}>
-            I'm a passionate developer creating beautiful, responsive web applications with modern technologies. Let's build something amazing together!
+            I’m a developer focused on building clean, responsive, and impactful digital experiences while continuously learning modern web technologies, AI-driven workflows, and real-world product development. I enjoy turning ideas into practical solutions and growing through every project I build.
           </p>
 
           {/* CTA Buttons */}
@@ -131,7 +131,7 @@ export default function HeroSection() {
                   : 'hover:shadow-blue-500/50'
               }`}
             >
-              View My Work
+              Explore Projects
               <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
             </Link>
             <Link
@@ -142,7 +142,7 @@ export default function HeroSection() {
                   : 'border-blue-400 text-blue-600 hover:bg-blue-400/10 hover:border-blue-500'
               }`}
             >
-              Get In Touch
+              Let’s Connect
             </Link>
           </div>
 
